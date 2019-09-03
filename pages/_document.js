@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { extractCritical } from 'emotion-server'
+import { InitializeColorMode } from 'theme-ui'
 
 export default class extends Document {
   static getInitialProps({ renderPage }) {
@@ -23,6 +24,7 @@ export default class extends Document {
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>
+          <InitializeColorMode />
           <Main />
           <NextScript />
         </body>

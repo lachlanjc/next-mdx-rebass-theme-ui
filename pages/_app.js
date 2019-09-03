@@ -1,6 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import { ThemeProvider, Styled } from 'theme-ui'
+import { ThemeProvider, ColorMode, Styled } from 'theme-ui'
 import theme from '@rebass/preset'
 
 export default class extends App {
@@ -20,7 +20,10 @@ export default class extends App {
     return (
       <Container>
         <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
+          <ColorMode />
+          <Styled.root>
+            <Component {...pageProps} />
+          </Styled.root>
         </ThemeProvider>
       </Container>
     )
